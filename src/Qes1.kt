@@ -5,10 +5,10 @@ fun main() {
     var strs : MutableList<String> = readLine().toString().split(',') as MutableList<String>
     checkValidition(strs)
     println(strs)
-    findPerfixStr(strs)
+    findPrefixStr(strs)
 
 }
-fun findPerfixStr(strs: MutableList<String>) {
+fun findPrefixStr(strs: MutableList<String>) {
 
     var minIndex = findMinLength(strs)
     var strMin = strs[minIndex]
@@ -17,6 +17,7 @@ fun findPerfixStr(strs: MutableList<String>) {
     strs.forEach(){
         strPerfix = greatestCommonPrefix(it,strMin)!!
     }
+    if(strPerfix.isEmpty()) strPerfix="\" \" "
     println(strPerfix)
 }
 fun findMinLength(strs: MutableList<String>): Int {
