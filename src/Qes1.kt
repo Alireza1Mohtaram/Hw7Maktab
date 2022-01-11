@@ -34,6 +34,7 @@ fun findMinLength(strs: MutableList<String>): Int {
 fun checkValidition (strs: MutableList<String>){
 
     val pattern  = "[a-z]+".toRegex()
+
     var sizeOfList= strs.size
     var i = 0
     while (i < sizeOfList) {
@@ -46,11 +47,13 @@ fun checkValidition (strs: MutableList<String>){
     }
 }
 fun greatestCommonPrefix(a: String, b: String): String{
+
     val minLength = min(a.length, b.length)
     for (i in 0 until minLength) {
-        if (a[i] != b[i]) {
-            return a.substring(0, i)
-        }
+            if (a[i] != b[i]) {
+                return a.substring(0, i)
+            }
     }
     return a.substring(0, minLength)
+
 }

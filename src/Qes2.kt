@@ -2,12 +2,26 @@ fun main() {
 
     var str = readLine().toString()
     var flag = false
+    val stack = mutableListOf<Char>()
 
-    for (i in 0 until str.length -1){
-        if (isPair(str[i],str[i+1])) flag = true
+     for (char in str) {
+
+        if (char == '}') {
+            if (!isPair(stack.removeLast(), '}')) break
+            else flag = true
+        } else if (char == ')') {
+            if (!isPair(stack.removeLast(), ')')) break
+            else flag = true
+        } else if (char == ']') {
+            if (!isPair(stack.removeLast(), ']')) break
+            else flag = true
+        } else {
+            stack.add(char)
+        }
     }
     println(flag)
 }
+
 fun isPair(left: Char, right: Char): Boolean {
     return left == '{' && right == '}' || left == '(' && right == ')' || left == '[' && right == ']'
 }
