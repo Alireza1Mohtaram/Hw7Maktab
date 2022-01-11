@@ -21,7 +21,6 @@ fun main() {
     }
     println(flag)
 }
-
 fun isPair(left: Char, right: Char): Boolean {
     return left == '{' && right == '}' || left == '(' && right == ')' || left == '[' && right == ']'
 }

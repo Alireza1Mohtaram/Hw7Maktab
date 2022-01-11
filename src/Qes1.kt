@@ -6,7 +6,6 @@ fun main() {
     checkValidition(strs)
     println(strs)
     findPrefixStr(strs)
-
 }
 fun findPrefixStr(strs: MutableList<String>) {
 
